@@ -1,7 +1,7 @@
 pipeline {
     agent any 
-    def mavenhome = tool name: 'mvn-home', type: 'maven'
     stages {
+        def mavenhome = tool name: 'mvn-home', type: 'maven'
         stage('SCM-Checkout') { 
             steps {
                 git branch: 'main', credentialsId: 'git-cred', 
