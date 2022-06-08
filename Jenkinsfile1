@@ -3,9 +3,8 @@ pipeline {
     stages {
         stage('SCM-Checkout') { 
             steps {
-                 git branch: 'main', credentialsId: 'git-cred', 
-				         url: 'https://github.com/david123/java-code.git'
-            }
+                 git branch: 'main', credentialsId: 'git-cred', url: 'https://github.com/vikas99341/web-app.git' 
+		 }
         }
         stage('Clean-Compile') { 
             steps {
