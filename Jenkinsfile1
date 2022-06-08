@@ -1,5 +1,6 @@
 pipeline {
     agent any 
+    def mavenhome = tool name: 'mvn-home', type: 'maven'
     stages {
         stage('SCM-Checkout') { 
             steps {
@@ -9,12 +10,12 @@ pipeline {
         }
         stage('clean-Compile') { 
             steps {
-                echo "Clean-compile" 
+                sh "${mavenhome}/bin/mvn clean compile"
             }
         }
         stage('Package') { 
             steps {
-                echo "package" 
+                sh "${mavenhome}/bin/mvn package"
             }
         }
     }
