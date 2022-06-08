@@ -1,0 +1,21 @@
+pipeline {
+    agent any 
+    stages {
+        stage('SCM-Checkout') { 
+            steps {
+                 git branch: 'main', credentialsId: 'git-cred', 
+				         url: 'https://github.com/david123/java-code.git'
+            }
+        }
+        stage('Clean-Compile') { 
+            steps {
+                // 
+            }
+        }
+        stage('Package') { 
+            steps {
+                // 
+            }
+        }
+    }
+}
